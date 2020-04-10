@@ -5,11 +5,11 @@ import Router from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 const _import = require('./util.import.' + process.env.NODE_ENV)
-
+import routes from './generateRouters'
 Vue.use(Router)
 const routerArr = [{
         path: '/',
-        redirect: '/login'
+        redirect: '/pageHead/page/home'
     },
     {
         path: '/login',
@@ -25,15 +25,14 @@ const routerArr = [{
             path: 'page',
             name: 'page',
             component: () => import('@/components/indexModules/indexPage.vue'),
-            children: [{
-                path: 'home',
-                name:'home',
-                component: () => import('@/views/system/home.vue'),
-            }]
+            children: [
+                ...routes
+            ]
         }, ]
     },
 ]
 const router = new Router({
+    // mode: 'history',
     routes: routerArr,
     linkActiveClass: 'active',
     linkExactActiveClass: 'active-exact'

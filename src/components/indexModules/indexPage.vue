@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div>页面整体布局</div>
+    <!-- <div>页面整体布局</div> -->
 
     <div class="container">
-      <div class="left">
+      <!-- <div class="left">
         <menu-tree />
-      </div>
+      </div> -->
       <div class="right">
         <keep-alive>
           <router-view />
@@ -27,8 +27,7 @@ export default {
         }
     },
     mounted(){
-      let arr = routerArr[2].children[0].children[0]
-      console.log(arr,'routerArr')
+      let arr = routerArr[2].children[0].children
     },
     methods:{
         
@@ -50,7 +49,7 @@ export default {
     font-size: 15px;
   }
   .right{
-    width: 80%;
+    width: 99%;
     height: 100%;
     overflow: auto;
   }

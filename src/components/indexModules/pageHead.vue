@@ -1,8 +1,8 @@
 <template>
   <div>
-      <div>
+      <!-- <div>
           页面头部
-      </div>
+      </div> -->
       <div>
           <router-view />
       </div>
